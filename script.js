@@ -188,12 +188,12 @@ function getSimilar(movieId, i) {
 window.onscroll = function(ev) {
 	currentPageTitle = document.title;
 	if (currentPageTitle == 'MovieRama') {
-	    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+	    if ((window.innerHeight + window.scrollY + 1000) > document.body.offsetHeight) {
 	    	nowPlayingPage++;
 	        nowPlaying();
 	    }
 	} else if (currentPageTitle == 'Search') {
-		if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+		if ((window.innerHeight + window.scrollY + 1000) > document.body.offsetHeight) {
 	    	searchResultsPage++;
 	        runSearch(2);
 	    }
