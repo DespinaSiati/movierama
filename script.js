@@ -13,14 +13,14 @@ async function getGenreJson(){
 function nowPlaying() {
     getGenreJson().then(genresResponse => {
         let genres = genresResponse.genres;
-        let nowPlayingUrl = ''.concat(baseURL, '/movie/now_playing?api_key=', APIKEY, '&page=',nowPlayingPage);
+        let nowPlayingUrl = ''.concat(baseURL, '/movie/now_playing?api_key=', APIKEY, '&page=', nowPlayingPage);
         getMovies(nowPlayingUrl, genres);
     })
 }
 
 function runSearch(index) {
 	getGenreJson().then(genresResponse => {
-    let genres = genresResponse.genres;
+        let genres = genresResponse.genres;
         if (index === 1) {
             searchResultsPage = 1;
             document.getElementById('output').innerHTML = "";
@@ -28,7 +28,7 @@ function runSearch(index) {
 		document.getElementById("page_title").style.display = "none";
 		input = document.getElementById("myInput");
 		inputValue = input.value;
-	    let searchUrl = ''.concat(baseURL, '/search/movie?api_key=', APIKEY, '&query=', inputValue, '&page=',searchResultsPage);
+	    let searchUrl = ''.concat(baseURL, '/search/movie?api_key=', APIKEY, '&query=', inputValue, '&page=', searchResultsPage);
 	    getMovies(searchUrl, genres)
     })
 }
@@ -68,7 +68,6 @@ function getMovies(url, genres) {
 
             document.getElementById('output').innerHTML +=
                 "<div class='search-result'>" +
-                	"<div class='overlay'></div>" +
                     "<div class='movie-info' id='movie-info-"+ movieId +"'>" +
                         "<h3 class='movie-title' id='movie-title-"+ movieId +"'>" + results[i].title + "</h3>" +
                         "<p class='movie-release-year' id='movie-year-"+ movieId +"'>(" + results[i].release_date.substring(0, 4) + ")</p>" +
@@ -89,7 +88,7 @@ function getMovies(url, genres) {
                         "<h3 class='details-title'>Similar Movies</h3><div class='similar' id='similar_"+ movieId +"'>" +
                         "</div>" +
                     "</div>" +
-                    "<div id='read_more_"+ movieId +"' class='movie-read-more' onclick='show("+ movieId +")'>Read More</div>" +
+                    "<div id='read_more_"+ movieId +"' class='movie-read-more' onclick='show("+ movieId + ", "+ i +")'>Read More</div>" +
                     "<div id='read_less_"+ movieId +"' class='movie-read-less' onclick='hide("+ movieId +")'>Read Less</div>" +
                 "</div>";   
         }

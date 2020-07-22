@@ -3,28 +3,30 @@
 @font-face { font-family: Mulish Italic; src: url('Mulish-Italic-VariableFont_wght.ttf'); } 
 
 /* Body */
-.hidden {
-	max-height: 0;
-    overflow: hidden;
-    padding: 0;
-    opacity: .9;
-    transition: max-height 1s;
-}
-
-.hidden.open {
-	visibility: visible;
-    max-height: 800rem;
-    transition: max-height 1s;
-    margin-top: 0;
-}
 
 body {
 	margin:0;
-	font-family: Mulish;
+    font-family: Mulish;
+    background-color: rgba(49, 69, 112, .15);
 }
 
 p {
 	margin-bottom:0 ;
+}
+
+.hidden {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    opacity: .9;
+    transition: max-height 0.75s;
+}
+
+.hidden.open {
+    visibility: visible;
+    max-height: 800rem;
+    transition: max-height 0.75s;
+    margin-top: 0;
 }
 
 .page-title h3 {
@@ -169,6 +171,7 @@ div#output {
 }
 
 div#output .search-result {
+    background-color: white;
     text-align: center;
     padding: 2rem;
     margin: 0 auto;
@@ -275,7 +278,12 @@ input#myInput {
     margin-right: auto;
     border: none;
     color: #314570;
+    background-color: rgba(49, 69, 112, .0);
     border-bottom: 1px solid #314570;
+}
+
+::placeholder { 
+  color: rgba(49, 69, 112);
 }
 
 /* Similar */
