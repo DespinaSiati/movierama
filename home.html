@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MovieRama</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="script.js"></script>
+</head>
+<body onload="nowPlaying()">
+	<header id="header">
+		<div class="wrapper">
+			<div id="header_logo"><a href="home.html">MovieRama</a></div>
+			<div id="header_menu">
+				<a href="home.html" class="menu-item current">In Theaters</a>
+				<a href="search.html" class="menu-item search">Search</a>
+			</div>
+			<div id="hamburger" class="" onclick="openHamburger()">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<div id="mobile_header_menu">
+				<a href="home.html" class="menu-item current">In Theaters</a>
+				<a href="search.html" class="menu-item search">Search</a>
+			</div>
+		</div>
+	</header>
+	<div class="wrapper">
+		<div class="page-title" id="page_title">
+			<h3>All the movies currently playing</h3>
+		</div>
+		<div id="output"></div>
+	</div>
+</body>
+</html>

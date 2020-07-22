@@ -1,0 +1,367 @@
+@font-face { font-family: Pacifico; src: url('Pacifico-Regular.ttf'); } 
+@font-face { font-family: Mulish; src: url('Mulish-VariableFont_wght.ttf'); } 
+@font-face { font-family: Mulish Italic; src: url('Mulish-Italic-VariableFont_wght.ttf'); } 
+
+/* Body */
+.hidden {
+	max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    opacity: .9;
+    transition: max-height 1s;
+}
+
+.hidden.open {
+	visibility: visible;
+    max-height: 800rem;
+    transition: max-height 1s;
+    margin-top: 0;
+}
+
+body {
+	margin:0;
+	font-family: Mulish;
+}
+
+p {
+	margin-bottom:0 ;
+}
+
+.page-title h3 {
+    text-align: center;
+    font-size: 1.75rem;
+    color: #314570;
+    display: block;
+}
+
+.wrapper {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1em;
+    box-sizing: content-box;
+}
+
+/* Header */
+
+#header {
+    position: sticky;
+    width: 100%;
+    height: 5em;
+    top: 0;
+    left: 0;
+    background: rgba(49, 69, 112, .9);
+    z-index: 100;
+}
+
+div#header_logo {
+    display: inline-block;
+    margin-top: .8rem;
+}
+
+div#header_logo a {
+	text-decoration: none;
+	font-family: Pacifico;
+	font-size: 2rem;
+    color: #E09873;
+}
+
+#hamburger {
+    grid-area: hamburger;
+    position: relative;
+    float: right;
+    transform: rotate(0deg);
+    transition: .5s ease-in-out;
+    cursor: pointer;
+    height: 1.25rem;
+    width: 2rem;
+    margin: 2rem 0;
+}
+
+#hamburger span {
+    position: absolute;
+    background: #E09873;
+    right: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+    width: 2.4em;
+    height: .2em;
+    border-radius: .1em;
+}
+
+#hamburger span:nth-child(1) {
+    top: -2px;
+}
+
+#hamburger span:nth-child(2), #hamburger span:nth-child(3) {
+    top: .48rem;
+}
+
+#hamburger span:nth-child(4) {
+    top: 1.05rem;
+}
+
+#hamburger.open span {
+    transition: .25s ease-in-out;
+}
+
+#hamburger.open span:nth-child(1) {
+    width: 0;
+    right: 50%;
+}
+
+#hamburger.open span:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+#hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+#hamburger.open span:nth-child(4) {
+    width: 0;
+    right: 50%;
+}
+
+#mobile_header_menu {
+	position: fixed;
+    top: 5em;
+    right: 0;
+    background: #fff;
+    text-align: right;
+    width: 100%;
+    height: 0;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    opacity: .9;
+    transition: max-height .25s;
+}
+
+#mobile_header_menu.open {
+    visibility: visible;
+    max-height: calc(100vh - 5em);
+    height: calc(100vh - 5em);
+    transition: max-height .25s;
+    margin-top: 0;
+    position: absolute;
+    overflow-y: hidden;
+}
+
+#mobile_header_menu a.menu-item {
+    display: block;
+    text-align: left;
+    margin-top: 1rem;
+    padding-left: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid;
+    text-decoration: none;
+}
+
+div#header_menu { 
+	display: none;
+}
+
+/* Movies Section */
+
+div#output {
+	margin-top: 2.5rem;
+}
+
+div#output .search-result {
+    text-align: center;
+    padding: 2rem;
+    margin: 0 auto;
+    box-shadow: 0 0 2px 0 rgba(0,0,0,.12), 0 2px 2px 0 rgba(0,0,0,.24);
+    margin-bottom: 2rem;
+}
+
+div#output .search-result:hover {
+    box-shadow: 0 0 8px 0 rgba(0,0,0,.12), 0 8px 8px 0 rgba(0,0,0,.24);
+}
+
+h3.movie-title {
+    color: #314570;
+    font-size: 1.5rem;
+    display: inline-block;
+    font-weight: 600;
+    margin:0;
+}
+
+p.movie-release-year {
+    display: inline-block;
+    font-weight: 600;
+    margin-left: .5rem;
+    color: #314570;
+}
+
+p.movie-vote-average {
+	color: #314570;
+	margin-bottom: 1rem;
+}
+
+p.movie-vote-average span {
+	color:#E09873;
+}
+
+p.movie-genres {
+	color: #bbb;
+	font-style: italic;
+}
+
+.movie-poster img {
+    height: 360px;
+    width: 260px;
+    object-fit: cover;
+}
+
+.movie-details {
+	margin-bottom: 1.45rem;
+}
+
+div.movie-read-less {
+	display: none;
+	background: #E09873;
+    padding: .6rem 2.45rem;
+    color: #314570;
+    border: 1px solid #E09873;
+    border-radius: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    width: 20%;
+    margin: 0 auto;
+}
+
+div.movie-read-less:hover {
+	background: #314570;
+    padding: .6rem 2.45rem;
+    border: 1px solid #314570;
+    color: #E09873;
+    border-radius: 20px;
+}
+
+div.movie-read-more {
+	background: #E09873;
+    padding: .6rem 2.45rem;
+    color: #314570;
+    border: 1px solid #E09873;
+    border-radius: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    width: 20%;
+    margin: 0 auto;
+}
+
+div.movie-read-more:hover {
+	background: #314570;
+    padding: .6rem 2.45rem;
+    border: 1px solid #314570;
+    color: #E09873;
+    border-radius: 20px;
+}
+
+/*Search Input */
+
+.input-container {
+	text-align: center;
+}
+
+input#myInput {
+    width: 50%;
+    outline:none;
+    height: 1.75rem;
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    color: #314570;
+    border-bottom: 1px solid #314570;
+}
+
+/* Similar */
+
+.similar {
+    grid-template-columns: repeat(1,1fr);
+    display: grid;
+    grid-gap: 2em 0;
+    margin-bottom: 2.5rem;
+}
+
+.no-content {
+	font-style: italic;
+}
+
+span.author-name {
+    display: block;
+    margin: 1rem auto;
+    font-style: italic;
+    font-weight: 600;
+}
+
+h3.details-title {
+    color: #314570;
+    font-size: 1.5rem;
+    display: block;
+    font-weight: 600;
+}
+
+/* Tablet Up */
+
+@media (min-width: 741px) {
+
+	.similar {
+	    grid-template-columns: repeat(2,1fr);
+	}
+}
+
+/* Desktop Up */
+
+@media (min-width: 1200px) {
+
+	#hamburger {
+		display: none;
+	}
+
+	div#header_menu {
+	    display: inline-block;
+	    margin-top: 1.8rem;
+	    float: right;
+	}
+
+	div#header_menu .menu-item {
+		display: inline;
+		margin-right: 2rem;
+		color:white;
+		text-decoration: none;
+	}
+
+	div#header_menu .menu-item:last-of-type {
+		margin:0;
+		background: #E09873;
+	    padding: .6rem 2.45rem;
+	    color: #314570;
+	    border: 1px solid #E09873;
+	    border-radius: 20px;
+	}
+
+	div#header_menu .menu-item:last-of-type:hover {
+		margin:0;
+		background: rgba(49, 69, 112, .9);
+	    padding: .6rem 2.45rem;
+	    border: 1px solid #E09873;
+	    color: #E09873;
+	    border-radius: 20px;
+	}
+
+	div#header_menu .menu-item:hover {
+	    color: #E09873;
+	}
+
+	div#output .search-result {
+		width: 60%;
+	}
+
+	.similar {
+    	grid-template-columns: repeat(3,1fr);
+	}
+}
