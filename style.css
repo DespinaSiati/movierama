@@ -208,7 +208,7 @@ p.movie-vote-average span {
 }
 
 p.movie-genres {
-	color: #bbb;
+	color: #999;
 	font-style: italic;
 }
 
@@ -283,6 +283,10 @@ input#myInput {
 }
 
 ::placeholder { 
+  color: rgba(49, 69, 112);
+}
+
+:-ms-input-placeholder { 
   color: rgba(49, 69, 112);
 }
 
